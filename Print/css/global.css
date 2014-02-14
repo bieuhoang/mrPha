@@ -1,0 +1,17 @@
+#page{overflow: hidden;text-align:left;}
+
+#ticker_02 {
+	height: 200px;
+	width:190px;
+	margin:0px;
+}
+
+.ticker li {
+	
+	border-bottom: 1px dotted #DDD;
+	padding: 5px;
+	margin: 0px 5px;
+	list-style-type:none;}
+	
+.ticker,.ticker ul{width:100%;margin:0;padding:0;}
+

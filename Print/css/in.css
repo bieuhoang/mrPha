@@ -1,0 +1,373 @@
+/* CSS Document background: #0C6E04 url(../Images/menus/gold-guarantee.png) no-repeat right top fixed; margin-top:3px;margin-left:0px; */
+body {
+		margin-top:0px;margin-bottom:0px; background-color: #E7E0D2;
+		
+		
+	}
+.bodyadmin	
+{
+	background-color:#fff;
+	
+	}
+td {
+	font-family:Arial;
+	font-size: 12px;
+	}
+	
+.button_input {
+	font-size: 13px;color:white;
+	background: white url(greenbutton.png)/*tpa=http://indephanoi.com/Images/Buttons/greenbutton.png*/ no-repeat top;
+	height:30px; width:87px;cursor:pointer;
+	border:0px;
+}
+.button_signin
+{
+
+}
+
+.button_search
+{
+
+}
+
+.textbox {
+	background-image:url(form_bg.jpg)/*tpa=http://indephanoi.com/images/menus/form_bg.jpg*/;
+	background-repeat:repeat-x;
+	border:1px solid #d1c7ac;
+	color:#333333;
+	padding:3px;
+	margin-right:4px;
+	margin-bottom:8px;
+	height:25px;
+
+}
+
+.NarrowInput /*Customer login*/
+{
+	background-color:green;color:#fff;
+}
+
+select
+{
+	
+}
+option
+{
+	
+} 
+span{color:#000; font-size: 13px;line-height:20px;}
+
+.ServiceTypes {color:Blue}
+.ServiceTypes:link {color:Blue; }
+.ServiceTypes:visited {color: Blue}
+.ServiceTypes:hover {color: Blue}
+
+.ModuleTitle {font: bold 12px Arial; color:#fff; text-transform:uppercase;}
+.ModuleTitle:link {color:#fff; }
+.ModuleTitle:visited {color: #fff}
+.ModuleTitle:hover {color: #fff}
+
+.ModuleTitle1 {font: bold 12px Arial; color:#fff; }
+.ModuleTitle1:link {color:#fff; }
+.ModuleTitle1:visited {color: #fff}
+.ModuleTitle1:hover {color: #fff}
+
+.ModuleTitle2 {font: bold 12px Arial; color:#fff; }
+.ModuleTitle2:link {color:#fff; }
+.ModuleTitle2:visited {color: #fff}
+.ModuleTitle2:hover {color: #fff}
+
+.TitleLink{text-decoration:none;color:#0C6E04;font-size: 13px;font-weight:bold; padding-left:5px;line-height:20px;}
+.TitleLink:link {color: #0C6E04}
+.TitleLink:hover {color: #ff0000}
+.TitleLink:visited {color: #0C6E04}
+.boxtt_text1{font-weight:bold;font-size:15px; line-height:30px;}
+.tdheader{height:29px;padding:0px 0px 3px 10px; background-image: url(sp3.jpg)/*tpa=http://indephanoi.com/Images/menus/sp3.jpg*/}
+
+.tdBanner {background:#9c020c url(BannerVietColor2012.jpg)/*tpa=http://indephanoi.com/images/companies/BannerVietColor2012.jpg*/ no-repeat; text-align:right;width:1000px;}
+.divlienhetructuyen{width:230px;float:right;text-align:left; color:#ffff00; font-size:16px; line-height:27px;height:180px;}
+.hotline
+{
+	color:#ffff00;font-size:22px;
+	text-shadow: 1px 1px #ff0000;
+	font-weight:bold;	
+}
+
+.tblMaster{background-color:#fff}
+.tblheader{  border:solid 1px #fafafa; width:100%; background-color:#fff}
+.tblheader2{  border:solid 0px #FABF03; width:100%; background-color:#EFEFC2}
+.tblmenu{ border-color:#006600; border:solid 1px #e1d3b0; background-color: #63B512; }
+.tblheader_search{  width:100%; background-color:#5DAF0C}
+
+.tdspace{height:5px;}
+
+.tdLeft {padding:5px 0px 0px 0px;border-right:dotted 0px #05a6c2;}
+.tdMain {padding:5px 0px 0px 5px;vertical-align:top;background:#DFF0FA}
+.tdRight{padding:5px 0px 0px 5px;vertical-align:top;}
+
+.tdBanner {background:#fff url(BannerVietColor2012.jpg)/*tpa=http://indephanoi.com/images/companies/BannerVietColor2012.jpg*/ no-repeat; text-align:right;}
+.tdmenu{height:25px;text-align:left; padding: 0px 0px 0px 0px;border-bottom:solid 5px #5BA922}
+
+.tdFooter{border-top:solid 5px #5BA922;background-color:#007946}
+.tdHeader_bg{padding:5px 15px 0px 0px;}
+
+.tdpadding{padding:5px 5px 5px 5px;}
+.tdproduct{padding:5px 5px 5px 5px;vertical-align:top; text-align:left;}
+.tdTitleNews {padding:3px 3px 3px 3px;}
+.ProductItemStyle{vertical-align:top; width:33%;border:dotted 1px #aaa;}
+
+/* horizotal menu style 
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+.Horizontal_bg{background:##529A14; text-align:left;}
+.horizotalmenu{
+background: transparent;
+voice-family: "\"}\"";
+voice-family: inherit;
+
+}
+.horizotalmenu td{
+display: inline;
+margin: 0 0 0 0;
+padding: 0px;
+font: 12px Arial;
+font-weight:bold;
+line-height:20px;
+
+}
+
+.horizotalmenu a{
+float: left;
+display: block;
+color: #fff;
+margin: 0px 1px 0 0; /*Margin between each menu item*/
+padding: 5px 10px;
+text-decoration: none;
+letter-spacing: 0px; 
+background: #007946;
+
+}
+
+.horizotalmenu a:link { color:#fff; text-decoration:none;}
+.horizotalmenu a:visited { color:#fff; text-decoration:none;}
+.horizotalmenu a:hover{
+background-color: #7DCF40;  /*Menu hover bgcolor*/
+color:#fff;
+}
+
+.horizotalmenu .current a:visited{ /*currently selected tab*/
+background-color: #7DCF40; /*Brown color theme*/ 
+color:#fff;
+
+}
+.brandinfo_brick
+{
+	width: 250px;
+	position:static;
+	background-color:#5BA922;
+	float:left;
+	height:30px;
+	margin-right:5px;
+	text-align:center;
+	margin-top:5px;
+	vertical-align:middle;
+	line-height:30px;
+	color:white;
+	font-weight:bold;
+}
+
+/*End horizotal menu*/
+
+/* Vertical menu */
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+.Verticalmenu{
+
+
+font-family: Arial;
+font-size:12px;
+
+}
+
+* html .Verticalmenu{ /*IE 6 only */
+width: 200px; /*Box model bug: 180px minus all left and right paddings for #blueblock */
+}
+
+.Verticalmenu tr{
+list-style: none;
+margin: 0;
+padding: 0;
+
+}
+
+.Verticalmenu td {
+
+line-height:15px;
+border-right:solid 1px #CCCCCC;
+}
+
+.Verticalmenu td a{
+display: block;
+padding: 5px 5px 5px 8px;
+
+font-weight:bold;
+
+text-decoration: none;
+width: 100%;
+font-size:12px;
+font-family: Arial;
+
+padding-left:18px;
+background: transparent url(arrow_yellow.png)/*tpa=http://indephanoi.com/Images/Icons/arrow_yellow.png*/ no-repeat center left;
+}
+
+html>body .Verticalmenu td a{ /*Non IE6 width*/
+width: auto;
+}
+
+.Verticalmenu td a:visited{  text-decoration:none;background: transparent url(arrow_yellow.png)/*tpa=http://indephanoi.com/Images/Icons/arrow_yellow.png*/ no-repeat center left;}
+.Verticalmenu td a:hover {
+
+
+
+background: transparent url(arrow_yellow.png)/*tpa=http://indephanoi.com/Images/Icons/arrow_yellow.png*/ no-repeat center left;
+
+}
+
+
+/* End Vertical menu */
+
+
+.textjustify{text-align:justify; padding-left:10px; padding-right:11px; line-height:20px;}
+
+a:link { color:#006600; text-decoration:none;}
+a:visited { color:#006600; text-decoration:none;}
+a:hover { color:#ff0000; text-decoration:none;}
+
+/* Hien thi san pham o phan` phong to, thu nho*/
+.box1bgnew{
+	background-color: #FFFFF0;
+}
+.box1{
+	background-image: url(th1_box12.gif)/*tpa=http://indephanoi.com/Images/images/th1_box12.gif*/;
+	background-repeat: repeat-x;
+}
+.box2{
+	background-image: url(th1_box14.gif)/*tpa=http://indephanoi.com/Images/images/th1_box14.gif*/;
+	background-repeat: repeat-y;
+}
+.box3{
+	background-image: url(th1_box16.gif)/*tpa=http://indephanoi.com/Images/images/th1_box16.gif*/;
+	background-repeat: repeat-y;
+}
+.box4{
+	background-image: url(th1_box18.gif)/*tpa=http://indephanoi.com/Images/images/th1_box18.gif*/;
+	background-repeat: repeat-x;
+}
+
+
+/* Admin CSS */
+.admin_bg1 {
+	background-image: url(admin_bg1.gif)/*tpa=http://indephanoi.com/Admin/Images/admin_bg1.gif*/;
+	height: 233px;
+	width: 614px;
+}
+.date_color{color:#C39E6D}
+.menu
+{
+	font-weight:bold; font-size:8pt; text-align:right; 
+	border-color:#ffffff; border:solid 3px #ffffff;
+} 
+ a.textmenuadmin:hover {color:#666; text-decoration:none;}
+ a.textmenuadmin:link, a.textmenuadmin:visited {color:#666; text-decoration:none;}
+ 
+.tdleftbuttonadmin {background-image: url(leftbuttonadmin.gif)/*tpa=http://indephanoi.com/Images/Images/leftbuttonadmin.gif*/; height:40px; width:15px;}
+.tdcenterbuttonadmin {background-image: url(centerbuttonadmin.gif)/*tpa=http://indephanoi.com/Images/Images/centerbuttonadmin.gif*/; height:40px;}
+.tdrightbuttonadmin {background-image: url(rightbuttonadmin.gif)/*tpa=http://indephanoi.com/Images/Images/rightbuttonadmin.gif*/; height:40px; width:15px;}
+
+.addmodule
+{
+	font-weight:bold; 
+	border-color:#f5f5f5; border:solid 1px #f5f5f5; background-color:#f5f5f5
+}
+
+.copyright
+{
+	
+	 height:40px;
+	
+}
+.copyright span {color:white;font-size:11px;}
+
+a.HeaderTypeLink, a.HeaderTypeLink:visited 
+{
+	color:#E17100;padding-bottom:5px;
+}
+label{color:#000}
+
+.orderbutton:link
+{
+
+}
+.orderbutton:hover
+{
+
+}
+.ModulePriceHeaderStyle{color:#fff; font-weight:bold; background-color:#42A0FF}
+.ModulePriceItemStyle{color:#990000;background-color:#FFCC33;}
+.HeaderTypeText {text-transform:uppercase; padding-bottom:13px;}
+hr{color:orange; size: 1px}
+.tblProduct { background-color:#fff}
+
+.ChildrenType {padding-left: 10px; color:#FFFFCC;font-weight:normal;}
+
+.PriceStyle span{color:Blue;}
+
+.divhotline
+{
+	
+}
+.lnkproductName,.lnkproductName:link
+{
+	font-weight:bold;
+}
+.imgBoder{border:solid 1px orange;}
+.paging{letter-spacing:2px;font-size:15px;}
+.email:link {color:Orange}
+.email:hover {color:Yellow}
+.email:visited {color:Orange}
+
+.hotrotructuyen{margin-left:5px; color:Green;}
+
+/* Exchange Rate styles*/
+.tblRate{width:100%;}
+.tblRate th {background-color:#007946;font-size:10px;color:#fff;height:23px;}
+.tblRate td {height:20px;font-size:9px;}
+.odd{background-color:#E8ECEF;}
+.even{background-color:#eeeeee;}
+.code{background-color:#fafafa; width:20px}
+
+/*-----------------------*/
+
+.tdinhieuqua{height:29px;padding:0px 0px 3px 10px; background-image: url(sp3.jpg)/*tpa=http://indephanoi.com/Images/menus/sp3.jpg*/;color:White;}
+
+.tblInhieuqua{  border:solid 0px #FABF03; width:100%; background-color:#fff}
+.trang{color:Green;font-style:italic;font-weight:bold;}
+/* -------------------------
+ For Vertical Dropdown menu
+----------------------------*/
+
+/*-----------------------*/
+.grdItemStyle,.grdItemStyle a ,.grdItemStyle a:visited 
+{
+	color:#fff;
+	background-color:#370003;
+}
+
+.grdItemStyleAlter,.grdItemStyleAlter a,.grdItemStyleAlter a:visited 
+{
+	color:#370003;
+	background-color:#fff;
+}
+.grdItemStyle a:hover{color:#fff; } 
