@@ -504,6 +504,14 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 				</div>
 
 				<div class="col-right">
+					<?php if(isset($this->breadcrumbs)):?>
+				<?php
+						
+$this->widget ( 'zii.widgets.CBreadcrumbs', array (
+								'links' => $this->breadcrumbs 
+						) );
+						?>
+			<?php endif?>	
 			<?php echo $content; ?>
 				</div>
 			</div>
@@ -521,12 +529,13 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 			</ul>
 		</div>
 	</div>
+
 	<div class="warr-foot">
 		<div class="c-footer-c">
 			<div class="menu-footer">
 				<a href="<?php echo Yii::app()->request->baseUrl; ?>"
 					tppabs="<?php echo Yii::app()->request->baseUrl; ?>">Trang chủ</a>
-				| <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe"\
+				| <a href="Contact.aspx.htm"
 					tppabs="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe">Liên hệ</a> |
 			</div>
 			<div class="footer">

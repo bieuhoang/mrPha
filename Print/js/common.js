@@ -151,5 +151,5 @@ function ShowAdDiv() {var objAdDivRight = document.getElementById("divAdRight");
         }
         else {objAdDivRight.style.display = "block"; objAdDivLeft.style.display = "block";FloatTopDiv();}
 }
-function ShowRightAdDiv(){if (document.body.clientWidth > 948){document.write("<a href='http://inthanhxuyen.com' target='_blank' title=''><img border='0' src='http://inthanhxuyen.com/images/LeftAd.jpg' width='150' style='margin-bottom:4px'></a>");}}
-function ShowLeftAdDiv(){if (document.body.clientWidth > 948){document.write("<a href='http://inthanhxuyen.com' target='_blank' title=''><img border='0' src='http://inthanhxuyen.com/images/RightAd.jpg' width='150' style='margin-bottom:4px'></a>");}}
+function ShowRightAdDiv(){if (document.body.clientWidth > 948){document.write("<a href='http://inthanhxuyen.com' target='_blank' title=''><img border='0' src='"+baseUrl+"/images/template/LeftAd.jpg' width='150' style='margin-bottom:4px'></a>");}}
+function ShowLeftAdDiv(){if (document.body.clientWidth > 948){document.write("<a href='http://inthanhxuyen.com' target='_blank' title=''><img border='0' src='"+baseUrl+"/images/template//RightAd.jpg' width='150' style='margin-bottom:4px'></a>");}}
