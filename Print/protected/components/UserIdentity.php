@@ -7,31 +7,24 @@
  */
  class UserIdentity extends CUserIdentity
  {
- 	
+ 	private $_id; 	
  	public function __construct($username, $password) {
  		$this->username = $username;
  		$this->password = $password;
  	}
- 	/**
- 	 * Authenticates a user.
- 	 * The example implementation makes sure if the username and password
- 	 * are both 'demo'.
- 	 * In practical applications, this should be changed to authenticate
- 	 * against some persistent user identity storage (e.g. database).
- 	 * @return boolean whether authentication succeeds.
- 	 */
- 	public function authenticate()
- 	{
- 		$users=array(
- 				// username => password
- 				'admin@admin.vn'=>'@dmin123456',
- 		);
- 		if(!isset($users[$this->username]))
- 			$this->errorCode=self::ERROR_USERNAME_INVALID;
- 		elseif($users[$this->username]!==$this->password)
- 		$this->errorCode=self::ERROR_PASSWORD_INVALID;
- 		else
- 			$this->errorCode=self::ERROR_NONE;
- 		return !$this->errorCode;
- 	}
+ 	 public function authenticate() {
+ 	 	$user = Users::model()->find(array ("condition" => "email = '" . $this->username."'"));
+         if ($user === null) {
+             $this->errorCode = self::ERROR_USERNAME_INVALID;
+         } else {
+             $password = md5($this->password);
+             if ($user->password !== $password) {
+                 $this->errorCode = self::ERROR_PASSWORD_INVALID;
+             } else {
+             	$this->errorCode = self::ERROR_NONE;
+ 				$this->_id = $user->userId;
+             }
+         }
+         return !$this->errorCode;
+     }
  }

@@ -73,10 +73,10 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 
 						<ul class="menuleft">
 							<li>+ LOẠI SẢN PHẨM</li>
-							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>
+							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themLoaiSanPham" class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
 							<li>+ NHÓM SẢN PHẨM</li>
-							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>
+							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themNhomSanPham" class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
 							<li>+ SẢN PHẨM</li>
 							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>

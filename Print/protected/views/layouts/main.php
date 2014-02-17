@@ -556,6 +556,22 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 	<script language="javascript" type="text/javascript">document.write("<script type='text/javascript' language='javascript'>MainContentW = 958;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 0;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");</script>
 </body>
 </html>
+<script type="text/javascript">
+	$(function() {
+		$.ajax({
+			type : "POST",
+			url : baseUrl + '/site/getLayout',
+			data : {
+				email : email,
+				password : password,
+			},
+			dataType : "json",
+			success : function(data) {
+				console.log(data);
+			}
+		});
+	});
+</script>
 
 
 

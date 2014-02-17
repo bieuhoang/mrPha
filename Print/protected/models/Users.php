@@ -3,22 +3,10 @@
 class Users extends AnlabActiveRecord {
 	
 	public $userId;
-	public $userGroup;
-	public $planId;
-	public $planRegister;
-	public $autoUpdatePlan;
-	public $planBegin;
-	public $planExpiredDate;
-	public $phoneNumber;
 	public $email;
 	public $password;
-	public $repassword;
 	public $remember;
-	public $name;
-	public $legalPerson;
-	public $legalPersonName;
 	public $status;
-	public $createdBy;
 	public $lastLogin;
 	public $created;
 	public $updated;	
@@ -44,37 +32,22 @@ class Users extends AnlabActiveRecord {
          }
      }
 	 
-	 public function checkEmail($attribute, $params) {
-         if (!$this->hasErrors()) {
-             $this->_identity = new UserIdentity($this->email, '');
-             if (!$this->_identity->checkEmail($this->email))
-                 $this->addError('email', Yii::t('default', 'Email existed !'));
-         }
-     }
-	 
-	 public function checkRePassword($attribute, $params) {
-	 	if (!$this->hasErrors()) {
-	 		if ($this->password != $this->repassword) {
-	 			$this->addError('repassword', Yii::t('default', 'Incorrect repassword !'));
-	 		}
-        }
-	 }
-	 
      public function login() {
          if ($this->_identity === null) {
              $this->_identity = new UserIdentity($this->email, $this->password);
              $this->_identity->authenticate();
          }
          if ($this->_identity->errorCode === UserIdentity::ERROR_NONE) {
+         	echo "Thanh cong";
          	if ($this->remember) {
             	Yii::app()->user->login($this->_identity,24*3600*7);
 		 	} else {
 		 		Yii::app()->user->login($this->_identity, 0);	
 			}
              return true;
+         }else{
+         	return false;
          }
-         else
-             return false;
      }
 	
 	
