@@ -22,9 +22,6 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 	href="<?php echo Yii::app()->request->baseUrl; ?>/css/jqueryslidemenu.css"
 	tppabs="<?php echo Yii::app()->request->baseUrl; ?>/css/jqueryslidemenu.css"
 	rel="stylesheet" type="text/css" />
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/common.js"
-	tppabs="<?php echo Yii::app()->request->baseUrl; ?>/data/js/common.js"
-	type="text/javascript"></script>
 <script
 	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"
 	tppabs="<?php echo Yii::app()->request->baseUrl; ?>/data/js/jquery.min.js"
@@ -72,7 +69,10 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 						<h2>Quản lý danh muc</h2>
 
 						<ul class="menuleft">
-							<li>+ LOẠI SẢN PHẨM</li>
+							<li>+ QUẢN LÝ THỂ LOẠI</li>
+							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themTheLoai" class="ch">Thêm mới</a></div></li>
+							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
+							<li>+ QUẢN LÝ LOẠI SẢN PHẨM</li>
 							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themLoaiSanPham" class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
 							<li>+ NHÓM SẢN PHẨM</li>
@@ -106,7 +106,6 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 				</div>
 			</div>
 	</div>
-	<script language="javascript" type="text/javascript">document.write("<script type='text/javascript' language='javascript'>MainContentW = 958;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 0;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");</script>
 </body>
 </html>
 

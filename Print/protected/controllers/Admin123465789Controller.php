@@ -21,35 +21,73 @@ class Admin123465789Controller extends CController {
 	public function actionadminHome(){
 		$this->render('/admin/adminHome',array());
 	}
-	
-	public function actionThemLoaiSanPham(){
-		$sp = new Sanpham();
-		$upSp = Yii::app()->request->getPost("Sanpham");
-		if($upSp != null && $upSp != ""){
-			$sp->name = $upSp["name"];
-			$sp->image = CUploadedFile::getInstance($sp,'image');
-			$sp->type = 1;
-			if($sp->save()){
-				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
-			}	
-		}
-		$this->render('/admin/themLoaiSanPham',array('model'=>$sp));
-	}
-	public function actionThemNhomSanPham(){
-		$sp = new Sanpham();
-		$upSp = Yii::app()->request->getPost("Sanpham");
-		if($upSp != null && $upSp != ""){
-			$sp->name = $upSp["name"];
-			$sp->image = CUploadedFile::getInstance($sp,'image');
-			$sp->type = 1;
-			if($sp->save()){
-				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
-			}	
-		}
-		$this->render('/admin/themNhomSanPham',array('model'=>$sp));
-	}
 	public function actionLogout(){
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	
+	public function actionThemTheLoai(){
+		$sp = new Sanpham();
+		$upSp = Yii::app()->request->getPost("Sanpham");
+		if($upSp != null && $upSp != ""){
+			$sp->name = $upSp["name"];
+			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->type = 1;
+			if($sp->save()){
+				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
+			}	
+		}
+		$this->render('/admin/themTheLoai',array('model'=>$sp));
+	}
+	public function actionthemLoaiSanPham(){
+		$pa = Sanpham::model()->findAll(array("condition" => "type = '1'"));
+		$sp = new Sanpham();
+		$upSp = Yii::app()->request->getPost("Sanpham");
+		if($upSp != null && $upSp != ""){
+			$sp->name = $upSp["name"];
+			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->type = 2;
+			$sp->parent = $upSp["parent"];;
+			if($sp->save()){
+				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
+			}	
+		}
+		$this->render('/admin/themLoaiSanPham',array('model'=>$sp, 'pa' => $pa));
+	}
+	public function actionThemNhomSanPham(){
+		$pa = Sanpham::model()->findAll(array("condition" => "type = '1'"));
+		$listC = array();
+		foreach($pa as $p){
+			$listC["$p->id"] = Sanpham::model()->findAll(array("condition" => "parent = '$p->id'"));			
+		}
+		$sp = new Sanpham();
+		$upSp = Yii::app()->request->getPost("Sanpham");
+		if($upSp != null && $upSp != ""){
+			$sp->name = $upSp["name"];
+			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->type = 2;
+			$sp->parent = $upSp["parent"];;
+			if($sp->save()){
+				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
+			}
+		}
+		$this->render('/admin/themNhomSanPham',array('model'=>$sp, 'pa' => $pa, 'listC' => $listC));
+	}
+	public function actionthemSanpham(){
+		$pa = Sanpham::model()->findAll(array("condition" => "type = '1'"));
+		$sp = new Sanpham();
+		$upSp = Yii::app()->request->getPost("Sanpham");
+		if($upSp != null && $upSp != ""){
+			$sp->name = $upSp["name"];
+			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->type = 2;
+			$sp->parent = $upSp["parent"];;
+			if($sp->save()){
+				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
+			}
+		}
+		$this->render('/admin/themNhomSanPham',array('model'=>$sp, 'pa' => $pa));
+	}
+	
+	
 }
