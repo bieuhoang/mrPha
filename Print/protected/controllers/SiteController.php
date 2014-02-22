@@ -45,14 +45,25 @@ class SiteController extends CController
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-	
-	public function actiongetLayout(){
-		//getbanner
-		//menu trai
-		//menu top
-		//QC tren
-		//Qc trai
-		//Qc phai
-		//footer	
+	public function actionDataTemplate(){
+		$return = array();
+		$pas = Sanpham::model()->findAll(array("condition" => "type = '1'"));
+		foreach($pas as $pa){
+			$thisP = array();
+			$thisP["id"] = $pa->id;
+			$thisP["name"] = $pa->name;
+			$thisP["img"] = $pa->image;
+			$thisP["ch"] = array();
+			$chs = Sanpham::model()->findAll(array("condition" => "parent = '$pa->id'"));
+			foreach($chs as $ch){
+				$thisC = array();
+				$thisC["id"] = $ch->id;
+				$thisC["name"] = $ch->name;
+				$thisC["img"] = $ch->image;
+				array_push($thisP["ch"], $thisC);
+			}
+			array_push($return, $thisP);
+		}
+		echo json_encode($return);
 	}
 }

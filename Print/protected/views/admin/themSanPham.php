@@ -1,4 +1,4 @@
-<div class="titleAdmin"> QUẢN LÝ NHÓM SẢN PHẨM</div>
+<div class="titleAdmin"> QUẢN LÝ SẢN PHẨM</div>
 <?php
 
 $form = $this->beginWidget ( 'CActiveForm', array (
@@ -19,6 +19,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</select>
 </div>
 <div class="row loaisp"></div>
+<div class="row nhomsp"></div>
 <div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name'); ?>
