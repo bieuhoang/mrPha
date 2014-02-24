@@ -80,18 +80,18 @@ if($banner!= null){
 			<div class="txt-png"></div>
 			<div class="slider-wrapper theme-default">
 				<div id="slider" class="nivoSlider">
+				<?php
+					$bqcTops = Sanpham::model()->findAll(array("condition" => "type = '4' OR type = '7'"));
+					if($bqcTops != null){
+						foreach($bqcTops as $bqcTop){
+					
+				?>
 					<img class="active" alt="6"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/6.jpg"/><img
-						alt="5"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/5.jpg"/><img
-						alt="3"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/3.jpg"/><img
-						alt="1"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/1.jpg"/><img
-						alt="11"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner ofset.jpg"/><img
-						alt="12"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner.jpg"/>
+						src="<?php echo Yii::app()->request->baseUrl."/files/images/".$bqcTop->image; ?>" style="max-width:948px; max-height:240px"/>
+				<?php
+				}
+				}
+				?>
 				</div>
 			</div>
 		</div>

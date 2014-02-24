@@ -59,6 +59,9 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 							<li>+ QUẢNG CÁO PHẢI</li>
 							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
+							<li>+ QUẢNG CÁO TRÊN</li>
+							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qcTop" class="ch">Thêm mới</a></div></li>
+							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
 						</ul>
 					</div>					
 				</div>

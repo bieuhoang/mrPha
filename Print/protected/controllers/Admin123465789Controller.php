@@ -105,5 +105,17 @@ class Admin123465789Controller extends CController {
 			}
 		}
 		$this->render('/admin/Suabanner',array('model'=>$sp));
-	}	
+	}
+	public function actionqctop(){
+		$sp = new Sanpham();
+		$upSp = Yii::app()->request->getPost("Sanpham");
+		if($upSp != null && $upSp != ""){
+			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->type = 7;
+			if($sp->save()){
+				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
+			}
+		}
+		$this->render('/admin/qcTop',array('model'=>$sp));
+	}
 }
