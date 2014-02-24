@@ -34,6 +34,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <body>
 <?php
 $banner = Sanpham::model()->find(array("condition" => "type = '4'"));
+$bn = "";
 if($banner!= null){
 	$bn = $banner->image;
 }
@@ -122,8 +123,8 @@ if($banner!= null){
 								<li><a href="15.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/in lazer mau.jpg"
 										alt="In lazer màu"></a>
-									<h1>
-										<a href="15.htm"
+									<h1></a>
+										<a href="15.htm">
 											lazer màu</a>
 									</h1></li>
 
@@ -200,12 +201,18 @@ if($banner!= null){
 				</div>
 			</div>
 		</div>
-
+<?php $bando = Sanpham::model ()->find ( array (
+				"condition" => "type = '10'"
+		) );
+if($bando != null){
+	$bandoi = $bando->image;
+}else{
+	$bandoi = "";
+}
+?>
 		<div class="box-bottom">
 			<div class="fl-sodo">
-				<img width="250" alt="Bản đồ"
-					height="247"
-					src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/">
+				<img width="250" alt="Bản đồ" height="247" src="<?php echo Yii::app()->request->baseUrl."/files/images/".$bandoi ?>"/>
 			</div>
 			<ul class="box-news-bot">
 
