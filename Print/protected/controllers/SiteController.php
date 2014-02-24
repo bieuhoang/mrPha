@@ -66,4 +66,11 @@ class SiteController extends CController
 		}
 		echo json_encode($return);
 	}
+	
+	public function actionTheloai(){		
+		$this->render('/site/theloai',array());
+	}
+	public function actionsp(){		
+		$this->render('/site/sanpham',array());
+	}
 }

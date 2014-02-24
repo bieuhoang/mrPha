@@ -38,7 +38,7 @@ return array(
 					'connectionString' => 'mysql:host=localhost;dbname=yenlinh',
 					'emulatePrepare' => true,
 					'username' => 'root',
-					'password' => '',
+					'password' => 'public123',
 					'charset' => 'utf8',
 			),
 		// uncomment the following to enable URLs in path-format

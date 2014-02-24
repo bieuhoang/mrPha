@@ -4,7 +4,7 @@ foreach($pas as $pa){ ?>
 <div class="box-service">
 	<h2><a href="<?php echo $pa->id;?>"><?php echo $pa->name;?></a></h2>
 	<div class="pd-box">
-		<a href="<?php echo $pa->id;?>" ><img src="<?php echo Yii::app()->request->baseUrl."/files/images/".$pa->image; ?>"/></a>
+		<a href="<?php echo $pa->id;?>" ><img style="max-width: 280px;max-height: 200px;margin-bottom: 26px;" src="<?php echo Yii::app()->request->baseUrl."/files/images/".$pa->image; ?>"/></a>
 		<p class="content"><?php echo $pa->noidung; ?></p>
 	</div>
 	<ul class="list-service">	

@@ -76,8 +76,9 @@ class Admin123465789Controller extends CController {
 		if($upSp != null && $upSp != ""){
 			$sp->name = $upSp["name"];
 			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->noidung = $upSp["noidung"];
 			$sp->type = 3;
-			$sp->parent = $upSp["loaisp"];;
+			$sp->parent = $upSp["parent"];;
 			if($sp->save()){
 				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
 			}
@@ -89,5 +90,20 @@ class Admin123465789Controller extends CController {
 		$thisSp = Sanpham::model()->findByPk($id);
 		$chirldSp = Sanpham::model()->findAll(array("condition" => "parent = $id"));
 		echo json_encode(array('thissp'=>$thisSp, 'chirld'=>$chirldSp));
+	}
+	public function actionBanner(){
+		$sp = Sanpham::model()->find(array("condition" => "type = '4'"));
+		if($sp == null){
+			$sp = new Sanpham();
+		}
+		$upSp = Yii::app()->request->getPost("Sanpham");
+		if($upSp != null && $upSp != ""){
+			$sp->image = CUploadedFile::getInstance($sp,'image');
+			$sp->type = 4;
+			if($sp->save()){
+				$sp->image->saveAs(Yii :: getPathOfAlias('webroot.files.').'/images/'.CUploadedFile::getInstance($sp,'image'));
+			}
+		}
+		$this->render('/admin/Suabanner',array('model'=>$sp));
 	}	
 }

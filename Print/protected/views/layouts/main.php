@@ -24,28 +24,30 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/All.js"	type="text/javascript"></script>
 <script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nivo.slider.pack.js"	type="text/javascript"></script>
 <script type="text/javascript">$(window).load(function() { $('#slider').nivoSlider();});</script>
-<meta name="google-site-verification"
-	content="pOsYHbGVQ1XjaJxDR1WwIvpfiaPBSuaQ0nBTtDxOPZc" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.css" />    
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.min.js"></script>
 <meta name="description"
 	content="Cung cấp các giải pháp liên quan đến In ấn, máy gia công, máy văn phòng." />
 <meta name="keywords" content="In ấn, in màu A0 - A4, Máy cán màng mini" />
 <meta name="title" content="Yen Linh Print" />
 </head>
 <body>
+<?php
+$banner = Sanpham::model()->find(array("condition" => "type = '4'"));
+if($banner!= null){
+	$bn = $banner->image;
+}
+?>
 	<div class="container">
 		<div class="col-header">
-			<img
-				src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/bannerinYenLinh.jpg"
-				tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/bannerinYenLinh.jpg"
-				border="0">
+			<img style="max-height: 124px;"
+				src="<?php echo Yii::app()->request->baseUrl."/files/images/".$bn; ?>" border="0">
 		</div>
 		<div id="menu_global">
 			<div class="jqueryslidemenu" id="myslidemenu">
 				<ul>
-					<li><a href="<?php echo Yii::app()->request->baseUrl; ?>"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>">Trang chủ</a></li>
-					<li><a href="<?php echo Yii::app()->request->baseUrl; ?>"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>">Sản phẩm -
+					<li><a href="<?php echo Yii::app()->request->baseUrl; ?>">Trang chủ</a></li>
+					<li><a href="<?php echo Yii::app()->request->baseUrl; ?>">Sản phẩm -
 							dịch vụ</a>
 						<ul class="dataTopMenu">
 						<?php 
@@ -54,22 +56,20 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 							$chs = Sanpham::model()->findAll(array("condition" => "parent = '$pa->id'"));
 						?>
 						<li>
-							<a href="<?php echo $pa->id;?>"><?php echo $pa->name;?></a>
+							<a href="<?php echo Yii::app()->request->baseUrl."/site/theloai?i=".$pa->id."&_".$pa->name;?>"><?php echo $pa->name;?></a>
 								<ul>
 								<?php 
-								foreach($chs as $ch){ ?>
-									<li><a href="<?php echo $ch->id;?>"><?php echo $ch->name;?></a></li>
+								foreach($chs as $ch){?>
+									<li><a href="<?php echo Yii::app()->request->baseUrl."/site/sp?i=".$ch->id."&_".$ch->name;?>"><?php echo $ch->name;?></a></li>
 								<?php }?></ul>
 						<?php }?>						
 						</ul>
 						</li>
 					<li><a
-						href="<?php echo Yii::app()->request->baseUrl; ?>/site/gioithieu"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/site/gioithieu">Giới
+						href="<?php echo Yii::app()->request->baseUrl; ?>/site/gioithieu">Giới
 							thiệu</a></li>
 					<li><a
-						href="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe">Liên
+						href="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe">Liên
 							hệ</a></li>
 				</ul>
 			</div>
@@ -81,23 +81,17 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 			<div class="slider-wrapper theme-default">
 				<div id="slider" class="nivoSlider">
 					<img class="active" alt="6"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/6.jpg"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Banner/6.jpg" /><img
+						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/6.jpg"/><img
 						alt="5"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/5.jpg"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Banner/5.jpg" /><img
+						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/5.jpg"/><img
 						alt="3"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/3.jpg"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Banner/3.jpg" /><img
+						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/3.jpg"/><img
 						alt="1"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/1.jpg"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Banner/1.jpg" /><img
+						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/1.jpg"/><img
 						alt="11"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner ofset.jpg"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner ofset.jpg" /><img
+						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner ofset.jpg"/><img
 						alt="12"
-						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner.jpg"
-						tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner.jpg" />
+						src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Top baner.jpg"/>
 				</div>
 			</div>
 		</div>
@@ -112,7 +106,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 
 						<ul class="menuleft">
 							<?php foreach($pas as $pa){?>
-							<li><a href="<?php echo $pa->id;?>"><?php echo $pa->name;?></a></li>
+							<li><a href="<?php echo Yii::app()->request->baseUrl."/site/theloai?i=".$pa->id."&_".$pa->name;?>"><?php echo $pa->name;?></a></li>
 							<?php }?>
 						</ul>
 					</div>
@@ -125,79 +119,58 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 							scrollamount="4" style="margin: 20px 0 20px 0;">
 							<ul class="photoHot">
 
-								<li><a href="15.htm"
-									tppabs="http://inYenLinh.com/In-lazer-mau/0503/15"><img
+								<li><a href="15.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/in lazer mau.jpg"
-										tppabs="http://inYenLinh.com/images/data/CategoryImg/in lazer mau.jpg"
 										alt="In lazer màu"></a>
 									<h1>
 										<a href="15.htm"
-											tppabs="http://inYenLinh.com/In-lazer-mau/0503/15">In
 											lazer màu</a>
 									</h1></li>
 
-								<li><a href="27.htm"
-									tppabs="http://inYenLinh.com/May-can-mang-mini-1600000d/0511/27"><img
+								<li><a href="27.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/Can mang moi.jpg"
-										tppabs="http://inYenLinh.com/images/data//Can mang moi.jpg"
 										alt="Máy cán màng mini 1.600.000đ"></a>
 									<h1>
-										<a href="27.htm"
-											tppabs="http://inYenLinh.com/May-can-mang-mini-1600000d/0511/27">Máy
+										<a href="27.htm">Máy
 											cán màng mini 1.600.000đ</a>
 									</h1></li>
 
-								<li><a href="22.htm"
-									tppabs="http://inYenLinh.com/In-name-card/0507/22"><img
+								<li><a href="22.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/name card.jpg"
-										tppabs="http://inYenLinh.com/images/data/CategoryImg/name card.jpg"
 										alt="In name card"></a>
 									<h1>
-										<a href="22.htm"
-											tppabs="http://inYenLinh.com/In-name-card/0507/22">In name
+										<a href="22.htm">In name
 											card</a>
 									</h1></li>
 
-								<li><a href="18.htm"
-									tppabs="http://inYenLinh.com/MA-CHU-VANG-A4---A3/0506/18"><img
+								<li><a href="18.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/ma chu vang bac dong so sach.jpg"
-										tppabs="http://inYenLinh.com/images/data/CategoryImg/ma chu vang bac dong so sach.jpg"
 										alt="MẠ CHỮ VÀNG A4 - A3"></a>
 									<h1>
-										<a href="18.htm"
-											tppabs="http://inYenLinh.com/MA-CHU-VANG-A4---A3/0506/18">MẠ
+										<a href="18.htm">MẠ
 											CHỮ VÀNG A4 - A3</a>
 									</h1></li>
 
-								<li><a href="13-1.htm"
-									tppabs="http://inYenLinh.com/Photocoppy/0501/13"><img
+								<li><a href="13-1.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/pho to kho A0-A4.jpg"
-										tppabs="http://inYenLinh.com/images/data/CategoryImg/pho to kho A0-A4.jpg"
 										alt="Photocoppy"></a>
 									<h1>
-										<a href="13-1.htm"
-											tppabs="http://inYenLinh.com/Photocoppy/0501/13">Photocoppy2</a>
+										<a href="13-1.htm">Photocoppy2</a>
 									</h1></li>
 
-								<li><a href="10.htm"
-									tppabs="http://inYenLinh.com/Dong-quyen-A0-A4/0501/10"><img
+								<li><a href="10.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/chinh sua luan van luan an.jpg"
-										tppabs="http://inYenLinh.com/images/data/CategoryImg/chinh sua luan van luan an.jpg"
 										alt="Đóng quyển A0-A4"></a>
 									<h1>
-										<a href="10.htm"
-											tppabs="http://inYenLinh.com/Dong-quyen-A0-A4/0501/10">Đóng
+										<a href="10.htm">Đóng
 											quyển A0-A4</a>
 									</h1></li>
 
-								<li><a href="19-1.htm"
-									tppabs="http://inYenLinh.com/In-ofset/0507/19"><img
+								<li><a href="19-1.htm"><img
 										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/in offset.jpg"
-										tppabs="http://inYenLinh.com/images/data/CategoryImg/in offset.jpg"
 										alt="In ofset"></a>
 									<h1>
-										<a href="19-1.htm"
-											tppabs="http://inYenLinh.com/In-ofset/0507/19">In ofset</a>
+										<a href="19-1.htm">In ofset</a>
 									</h1></li>
 							</ul>
 						</marquee>
@@ -213,8 +186,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 								<li class="bl">Hotline</li>
 								<li class="phone">0915xxx.yyy</li>
 								<li class="ol"><a href="ymsgr:sendim?hoangbieu_kma106"><img
-										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/online-u=hoangbieu_kma106&m=g&t=1&l=vn.gif"
-										tppabs="http://opi.yahoo.com/online?u=hoangbieu_kma106&m=g&t=1&l=vn">Dịch vụ in Yến Linh</a></li>
+										src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/online-u=hoangbieu_kma106&m=g&t=1&l=vn.gif">Dịch vụ in Yến Linh</a></li>
 
 							</ul>
 						</div>
@@ -233,8 +205,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 			<div class="fl-sodo">
 				<img width="250" alt="Bản đồ"
 					height="247"
-					src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/"
-					tppabs="<?php echo Yii::app()->request->baseUrl; ?>/images/">
+					src="<?php echo Yii::app()->request->baseUrl; ?>/images/data/">
 			</div>
 			<ul class="box-news-bot">
 
@@ -244,12 +215,8 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 	<div class="warr-foot">
 		<div class="c-footer-c">
 			<div class="menu-footer">
-				<a href="<?php echo Yii::app()->request->baseUrl; ?>"
-					tppabs="<?php echo Yii::app()->request->baseUrl; ?>">Trang chủ</a>
-				| <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe"
-					\
-					tppabs="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe">Liên
-					hệ</a> |
+				<a href="<?php echo Yii::app()->request->baseUrl; ?>">Trang chủ</a>
+				| <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/lienhe">Liên hệ</a> |
 			</div>
 			<div class="footer">
 				<div style="text-align: center;">

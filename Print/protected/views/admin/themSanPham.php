@@ -11,7 +11,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 ?>
 <div class="row">
 	<label for="Sanpham_parent">Chọn thể loại</label>
-	<select	name="SanphamTl" id="Sanpham_parent" onchange="getChild(this.value)">
+	<select	name="Sanpham[parent]" id="Sanpham_parent">
 	<option value="0">--Chọn thể loại--</option>	
 		<?php foreach ($theloais as $theloai) { ?>
 			<option value="<?php echo $theloai->id;?>"><?php echo $theloai->name;?></option>		
@@ -19,7 +19,6 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 	</select>
 </div>
 <div class="row loaisp"></div>
-<div class="row nhomsp"></div>
 <div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>
 		<?php echo $form->textField($model,'name'); ?>
@@ -29,13 +28,16 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->labelEx($model,'image'); ?>
 		<?php echo $form->fileField($model, 'image');?>
 		<?php echo $form->error($model,'image'); ?>
-	</div>
-
-
+</div>
+<div class="row">
+	<label for="Sanpham_parent">Nội dung</label>
+	<textarea id="input" name="Sanpham[noidung]"></textarea>
+</div>
 <div class="row buttons">
 		<?php echo CHtml::submitButton('Thêm'); ?>
 	</div>
 
 <?php $this->endWidget();?>
 <script type="text/javascript">
+   $("#input").cleditor();
 </script>

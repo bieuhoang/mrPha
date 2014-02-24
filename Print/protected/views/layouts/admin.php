@@ -24,6 +24,9 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/All.js"	type="text/javascript"></script>
 <script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nivo.slider.pack.js"	type="text/javascript"></script>
 <script type="text/javascript">$(window).load(function() { $('#slider').nivoSlider();});</script>
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.css" />    
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.min.js"></script>
+
 <meta name="google-site-verification"
 	content="pOsYHbGVQ1XjaJxDR1WwIvpfiaPBSuaQ0nBTtDxOPZc" />
 <meta name="description"
@@ -45,17 +48,11 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 							<li>+ QUẢN LÝ THỂ LOẠI</li>
 							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themTheLoai" class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
-							<li>+ QUẢN LÝ LOẠI SẢN PHẨM</li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themLoaiSanPham" class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
-							<li>+ NHÓM SẢN PHẨM</li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themNhomSanPham" class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
 							<li>+ SẢN PHẨM</li>
 							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themSanPham" class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
 							<li><a class="ch">+ LIÊN HỆ</a></li>
-							<li class="lch"><div><a class="ch">BANNER</a></div></li>
+							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/banner" class="ch">BANNER</a></div></li>
 							<li>+ QUẢNG CÁO TRÁI</li>
 							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>
 							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
