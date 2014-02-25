@@ -32,7 +32,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 
 <div class="row buttons">
-		<?php echo CHtml::submitButton('Thêm'); ?>
+		<?php echo CHtml::submitButton('CẬP NHÂT'); ?>
 	</div>
 
 <?php $this->endWidget();?>

@@ -17,7 +17,7 @@
 		<?php echo $form->error($model,'image'); ?>
 	</div>
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Thêm'); ?>
+		<?php echo CHtml::submitButton('CẬP NHÂT'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
