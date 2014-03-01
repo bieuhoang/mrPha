@@ -14,7 +14,7 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php echo $form->error($model,'image'); ?>
 </div>
 <div class="row">
-		<label for="Sanpham_name">URL: </label>		<input name="Sanpham[url]" id="Sanpham_url" type="text">			</div>
+		<label for="Sanpham_name">URL: </label>		<input name="Sanpham[url]" id="Sanpham_url" value="<?php echo $model->url?>" type="text">			</div>
 <div class="row buttons">
 		<?php echo CHtml::submitButton('UPLOAD'); ?>
 	</div>

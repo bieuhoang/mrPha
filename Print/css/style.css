@@ -1441,14 +1441,15 @@ ul.menuleft li {
 
 ul.menuleft li a {
 	color: #000;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
-.lch{
+.lch {
 	padding-left: 43px !important;
 	background-color: #999;
 	cursor: pointer;
 }
+
 ul.menuleft li a:hover,ul.menuleft li a.active {
 	color: #1e7bc9;
 	text-decoration: none
@@ -1994,6 +1995,24 @@ p.view-title-da {
 .content h1 {
 	background: none;
 }
-.dpl{
+
+.dpl {
 	width: 155px;
+}
+
+.titleAdmin {
+	text-align: center;
+	font-size: 35px;
+	margin-bottom: 100px;
+	font-weight: bold;
+	color: red;
+}
+
+.adminPages .row {
+	margin: 15px;
+}
+
+.adminPages .row label {
+	width: 100px;
+	display: inline-block;
 }

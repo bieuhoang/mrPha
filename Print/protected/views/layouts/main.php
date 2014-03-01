@@ -90,6 +90,8 @@ if ($banner != null) {
 						<?php }?>						
 						
 						
+						
+						
 						</ul></li>
 					<li><a
 						href="<?php echo Yii::app()->request->baseUrl; ?>/site/gioithieu">Giới
@@ -149,19 +151,18 @@ if ($banner != null) {
 							scrollamount="4" style="margin: 20px 0 20px 0;">
 							<ul class="photoHot">
 									<?php
-									
-$spms = Sanpham::model ()->findAll ( array (
+									$spms = Sanpham::model ()->findAll ( array (
 											"condition" => "type = '3' AND child = '1'" 
 									) );
 									if ($spms != null) {
 										foreach ( $spms as $spm ) {
 											?>
 									<li><a
-									href="<?php echo Yii::app()->request->baseUrl.'site/sp?i='.$spm->id.'&_'.$spm->name;?>"><img
+									href="<?php echo Yii::app()->request->baseUrl.'/site/sp?i='.$spm->id.'&_'.$spm->name;?>"><img
 										src="<?php echo Yii::app()->request->baseUrl."/files/images/".$spm->image; ?>"></a>
 									<h1>
 										<a
-											href="<?php echo Yii::app()->request->baseUrl.'site/sp?i='.$spm->id.'&_'.$spm->name;?>"><?php echo $spm->name;?></a>
+											href="<?php echo Yii::app()->request->baseUrl.'/site/sp?i='.$spm->id.'&_'.$spm->name;?>"><?php echo $spm->name;?></a>
 									</h1></li>
 							<?php }}?>
 								
@@ -204,11 +205,11 @@ if ($bando != null) {
 }
 ?>
 		<div class="box-bottom">
-		<!-- 	<div  class="fl-sodo">
+			<!-- 	<div  class="fl-sodo">
 				<img width="250" alt="Bản đồ" height="247"
 					src="<?php echo Yii::app()->request->baseUrl."/files/images/".$bandoi ?>" />
 			</div>
-		 -->	
+		 -->
 			<ul class="box-news-bot">
 
 			</ul>
@@ -237,24 +238,46 @@ if ($bando != null) {
 	</div>
 	<div id="divAdLeft" class="dpl"
 		style="display: none; position: absolute; top: 10px; left: 0px;">
-		<?php $mnts = Sanpham::model ()->findAll ( array ("condition" => "type = '5'") );
-		if($mnts != null){
-			foreach($mnts as $mnt){
-			?>
-				<a href='<?php echo $mnt->url ; ?>' target='_blank' title=''><img border='0' src='<?php echo Yii::app()->request->baseUrl."/files/images/".$mnt->image; ?>' width='150' style='margin-bottom:4px'></a>
-			<?php 	
+		<?php
+		
+$mnts = Sanpham::model ()->findAll ( array (
+				"condition" => "type = '5'" 
+		) );
+		if ($mnts != null) {
+			foreach ( $mnts as $mnt ) {
+				$url = $mnt->url;
+				if ($mnt->url == null) {
+					$url = Yii::app ()->request->baseUrl . '/site/sp?i=' . $mnt->id . '&_' . $mnt->name;
+				}
+				?>
+				<a href='<?php echo $url ; ?>' target='_blank' title=''><img
+			border='0'
+			src='<?php echo Yii::app()->request->baseUrl."/files/images/".$mnt->image; ?>'
+			width='150' style='margin-bottom: 4px'></a>
+			<?php
 			}
 		}
 		?>
 	</div>
 	<div id="divAdRight" class="dpl"
 		style="display: none; position: absolute; top: 10px; left: 0px;">
-		<?php $mnfs = Sanpham::model ()->findAll ( array ("condition" => "type = '6'") );
-		if($mnfs != null){
-			foreach($mnfs as $mnf){
-			?>
-				<a href='<?php echo $mnf->url;?>' target='_blank' title=''><img border='0' src='<?php echo Yii::app()->request->baseUrl."/files/images/".$mnf->image; ?>' width='150' style='margin-bottom:4px'></a>
-			<?php 	
+		<?php
+		
+$mnfs = Sanpham::model ()->findAll ( array (
+				"condition" => "type = '6'" 
+		) );
+		if ($mnfs != null) {
+			foreach ( $mnfs as $mnf ) {
+				$url = $mnf->url;
+				if ($mnf->url == null) {
+					$url = Yii::app ()->request->baseUrl . '/site/sp?i=' . $mnf->id . '&_' . $mnf->name;
+				}
+				?>
+				<a href='<?php echo $url;?>' target='_blank' title=''><img
+			border='0'
+			src='<?php echo Yii::app()->request->baseUrl."/files/images/".$mnf->image; ?>'
+			width='150' style='margin-bottom: 4px'></a>
+			<?php
 			}
 		}
 		?>

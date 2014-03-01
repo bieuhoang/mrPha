@@ -34,11 +34,15 @@ class Admin123465789Controller extends CController {
 		if ($upSp != null && $upSp != "") {
 			$sp->name = $upSp ["name"];
 			$sp->type = 1;
+			$sp->noidung = $upSp ["noidung"];
 			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
 				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
 				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
 			}
 			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dstl"
+			) );
 		}
 		$this->render ( '/admin/themTheLoai', array (
 				'model' => $sp 
@@ -61,6 +65,9 @@ class Admin123465789Controller extends CController {
 				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
 			}
 			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dssp"
+			) );
 		}
 		$this->render ( '/admin/themSanPham', array (
 				'model' => $sp,
@@ -124,6 +131,9 @@ class Admin123465789Controller extends CController {
 				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
 			}
 			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dsqctr"
+			) );
 		}
 		$this->render ( '/admin/qctr', array (
 				'model' => $sp 
@@ -140,6 +150,9 @@ class Admin123465789Controller extends CController {
 				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
 			}
 			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dsqcf"
+			) );
 		}
 		$this->render ( '/admin/qcph', array (
 				'model' => $sp 
@@ -205,6 +218,12 @@ class Admin123465789Controller extends CController {
 	public function actiondtl() {
 		$id = Yii::app ()->request->getParam ( "id" );
 		$thisSp = Sanpham::model ()->findByPk ( $id );
+		if($thisSp != null){
+			$chs = Sanpham::model()->findAll(array("condition" => "parent = '$thisSp->id'"));
+			foreach($chs as $ch){
+				$ch->delete();
+			}
+		}
 		$thisSp->delete ();
 		$this->redirect ( array (
 				"/admin123465789/dstl" 
@@ -219,6 +238,7 @@ class Admin123465789Controller extends CController {
 		$upSp = Yii::app ()->request->getPost ( "Sanpham" );
 		if ($upSp != null && $upSp != "") {
 			$sp->name = $upSp ["name"];
+			$sp->noidung = $upSp ["noidung"];
 			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
 				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
 				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
@@ -236,7 +256,7 @@ class Admin123465789Controller extends CController {
 	public function actionssp() {
 		$pa = Sanpham::model ()->findAll ( array (
 				"condition" => "type = '1'" 
-		) );
+		));
 		$id = Yii::app ()->request->getParam ( "id" );
 		$sp = Sanpham::model ()->findByPk ( $id );
 		if ($sp == null) {
@@ -245,13 +265,14 @@ class Admin123465789Controller extends CController {
 		$upSp = Yii::app ()->request->getPost ( "Sanpham" );
 		if ($upSp != null && $upSp != "") {
 			$sp->name = $upSp ["name"];
+			$sp->noidung = $upSp ["noidung"];
 			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
 				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
 				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
 			}
 			$sp->save ();
 			$this->redirect ( array (
-					"/admin123465789/dstl" 
+					"/admin123465789/dssp" 
 			) );
 		} else {
 			$this->render ( '/admin/themSanPham', array (
@@ -260,9 +281,120 @@ class Admin123465789Controller extends CController {
 			) );
 		}
 	}
+	public function actionsqctr() {
+		$id = Yii::app ()->request->getParam ( "id" );
+		$sp = Sanpham::model ()->findByPk ( $id );
+		if ($sp == null) {
+			$sp = new Sanpham ();
+		}
+		$upSp = Yii::app ()->request->getPost ( "Sanpham" );
+		if ($upSp != null && $upSp != "") {
+			$sp->url = $upSp ["url"];
+			$sp->type = 5;
+			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
+				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
+				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
+			}
+			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dsqctr"
+			) );
+		} else {
+			$this->render ( '/admin/qctr', array (
+					'model' => $sp,
+			) );
+		}
+	}
+	public function actionsqcf() {
+		$id = Yii::app ()->request->getParam ( "id" );
+		$sp = Sanpham::model ()->findByPk ( $id );
+		if ($sp == null) {
+			$sp = new Sanpham ();
+		}
+		$upSp = Yii::app ()->request->getPost ( "Sanpham" );
+		if ($upSp != null && $upSp != "") {
+			$sp->url = $upSp ["url"];
+			$sp->type = 6;
+			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
+				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
+				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
+			}
+			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dsqcf"
+			) );
+		} else {
+			$this->render ( '/admin/qcph', array (
+					'model' => $sp,
+			) );
+		}
+	}
+	public function actionsqct() {
+		$id = Yii::app ()->request->getParam ( "id" );
+		$sp = Sanpham::model ()->findByPk ( $id );
+		if ($sp == null) {
+			$sp = new Sanpham ();
+		}
+		$upSp = Yii::app ()->request->getPost ( "Sanpham" );
+		if ($upSp != null && $upSp != "") {
+			$sp->type = 7;
+			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
+				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
+				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
+			}
+			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/dsqct"
+			) );
+		} else {
+			$this->render ( '/admin/qcTop', array (
+					'model' => $sp,
+			) );
+		}
+	}
 	public function actiondssp() {
 		$this->render ( '/admin/dssp', array () );
 	}
+	public function actiondsqctr() {
+		$this->render ( '/admin/dsqctr', array () );
+	}
+	public function actiondsqcf() {
+		$this->render ( '/admin/dsqcf', array () );
+	}
+	public function actiondsqct() {
+		$this->render ( '/admin/dsqct', array () );
+	}
+	public function actionanht(){
+		$sp = new Sanpham ();
+		$upSp = Yii::app ()->request->getPost ( "Sanpham" );
+		if ($upSp != null && $upSp != "") {
+			$sp->type = 8;
+			if (CUploadedFile::getInstance ( $sp, 'image' ) != null && CUploadedFile::getInstance ( $sp, 'image' ) != "") {
+				$sp->image = CUploadedFile::getInstance ( $sp, 'image' );
+				$sp->image->saveAs ( Yii::getPathOfAlias ( 'webroot.files.' ) . '/images/' . CUploadedFile::getInstance ( $sp, 'image' ) );
+			}
+			$sp->save ();
+			$this->redirect ( array (
+					"/admin123465789/Anhds"
+			) );
+		} else {
+			$this->render ( '/admin/anht', array (
+					'model' => $sp,
+			) );
+		}
+	}
+	public function actionanhds(){
+		$this->render ( '/admin/anhds', array () );
+	}
+	public function actionanhx(){
+		$id = Yii::app ()->request->getParam ( "id" );
+		$thisSp = Sanpham::model ()->findByPk ( $id );
+		$thisSp->delete ();
+		$this->redirect ( array (
+				"/admin123465789/anhds"
+		) );
+	}
+	
 	public function accessRules() {
 		return array (
 				array (
@@ -274,8 +406,7 @@ class Admin123465789Controller extends CController {
 						'users' => array (
 								'*' 
 						) 
-				)
-				,
+				),
 				array (
 						'allow',
 						'actions' => array (
@@ -299,15 +430,13 @@ class Admin123465789Controller extends CController {
 						'users' => array (
 								'@' 
 						) 
-				)
-				,
+				),
 				array (
 						'deny',
 						'users' => array (
 								'*' 
 						) 
-				)
-				 
+				) 
 		)
 		;
 	}

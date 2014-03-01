@@ -46,6 +46,6 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 
 <?php $this->endWidget();?>
 <script type="text/javascript">
-   $("#input").cleditor();
-   $("#input").replace("HA NOI");
+	$("#input").val('<?php echo $model->noidung;?>');
+	$("#input").cleditor();
 </script>

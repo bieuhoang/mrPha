@@ -89,7 +89,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 									class="ch">Thêm mới</a>
 							</div></li>
 						<li class="lch"><div>
-								<a class="ch">Danh sách</a>
+								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dsqctr" class="ch">Danh sách</a>
 							</div></li>
 						<li>+ QUẢNG CÁO PHẢI</li>
 						<li class="lch"><div>
@@ -98,7 +98,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 									class="ch">Thêm mới</a>
 							</div></li>
 						<li class="lch"><div>
-								<a class="ch">Danh sách</a>
+								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dsqcf" class="ch">Danh sách</a>
 							</div></li>
 						<li>+ QUẢNG CÁO TRÊN</li>
 						<li class="lch"><div>
@@ -107,8 +107,19 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 									class="ch">Thêm mới</a>
 							</div></li>
 						<li class="lch"><div>
-								<a class="ch">Danh sách</a>
+								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dsqct" class="ch">Danh sách</a>
 							</div></li>
+							
+							<li>+ QUẢN LÝ DỮ LIỆU ẢNH</li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/anht"
+									class="ch">Thêm mới</a>
+							</div></li>
+						<li class="lch"><div>
+								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/anhds" class="ch">Danh sách</a>
+							</div></li>
+							
 						<li><a class="ch">+ QUẢN LÝ CHUNG</a></li>
 						<li class="lch"><div>
 								<a
@@ -148,7 +159,7 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 						) );
 						?>
 			<?php endif?>	
-			<?php echo $content; ?>
+			<?php echo "<div class='adminPages'>".$content."</div>"; ?>
 				</div>
 		</div>
 	</div>
