@@ -15,17 +15,32 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <meta content="3cdotcom.vn" name="author" />
 <meta content="text/javascript" http-equiv="Content-Script-Type" />
 <meta name="robots" content="INDEX, FOLLOW" />
-<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" rel="stylesheet" type="text/css" />
-<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/jqueryslidemenu.css" rel="stylesheet" type="text/css" />
-<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/common.js" type="text/javascript"></script>
-<script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js" type="text/javascript"></script>
-<script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jqueryslidemenu.js"	type="text/javascript"></script>
-<script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.7.2.min.js" type="text/javascript"></script>
-<script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/All.js"	type="text/javascript"></script>
-<script	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nivo.slider.pack.js"	type="text/javascript"></script>
+<link href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css"
+	rel="stylesheet" type="text/css" />
+<link
+	href="<?php echo Yii::app()->request->baseUrl; ?>/css/jqueryslidemenu.css"
+	rel="stylesheet" type="text/css" />
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/common.js"
+	type="text/javascript"></script>
+<script
+	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"
+	type="text/javascript"></script>
+<script
+	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jqueryslidemenu.js"
+	type="text/javascript"></script>
+<script
+	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.7.2.min.js"
+	type="text/javascript"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/All.js"
+	type="text/javascript"></script>
+<script
+	src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nivo.slider.pack.js"
+	type="text/javascript"></script>
 <script type="text/javascript">$(window).load(function() { $('#slider').nivoSlider();});</script>
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.css" />    
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.css" />
+<script type="text/javascript"
+	src="<?php echo Yii::app()->request->baseUrl; ?>/js/clEditor/jquery.cleditor.min.js"></script>
 
 <meta name="google-site-verification"
 	content="pOsYHbGVQ1XjaJxDR1WwIvpfiaPBSuaQ0nBTtDxOPZc" />
@@ -39,38 +54,92 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 		<script type="text/javascript"> function SubmitSearch(){var txtkey = $("#keyword").val(); setTimeout('location.href="/Search/'+locdau(txtkey) +'/";', 100);} $('#keyword').keypress(function(e) {if(e.which ==13) $('#btnSearch').click();});</script>
 
 		<div class="col-body">
-				<div class="col-left">
+			<div class="col-left">
 				<a href="logout">Logout</a>
-					<div class="box-news-id">
-						<h2>Quản lý danh muc</h2>
+				<div class="box-news-id">
+					<h2>Quản lý danh muc</h2>
 
-						<ul class="menuleft">
-							<li>+ QUẢN LÝ THỂ LOẠI</li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themTheLoai" class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dstl" class="ch">Danh sách</a></div></li>
-							<li>+ SẢN PHẨM</li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themSanPham" class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dssp" class="ch">Danh sách</a></div></li>
-							<li>+ QUẢNG CÁO TRÁI</li>
-							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
-							<li>+ QUẢNG CÁO PHẢI</li>
-							<li class="lch"><div><a class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
-							<li>+ QUẢNG CÁO TRÊN</li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qcTop" class="ch">Thêm mới</a></div></li>
-							<li class="lch"><div><a class="ch">Danh sách</a></div></li>
-							<li><a class="ch">+ QUẢN LÝ CHUNG</a></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/banner" class="ch">BANNER</a></div></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/#" class="ch">THÔNG TIN LIÊN HỆ</a></div></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/lh" class="ch">TRANG LIÊN HỆ</a></div></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/gt" class="ch">TRANG GIỚI THIỆU</a></div></li>
-							<li class="lch"><div><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/bando" class="ch">CẬP NHẬT BẢN ĐỒ</a></div></li>
-						</ul>
-					</div>					
+					<ul class="menuleft">
+						<li>+ QUẢN LÝ THỂ LOẠI</li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themTheLoai"
+									class="ch">Thêm mới</a>
+							</div></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dstl"
+									class="ch">Danh sách</a>
+							</div></li>
+						<li>+ SẢN PHẨM</li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/themSanPham"
+									class="ch">Thêm mới</a>
+							</div></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dssp"
+									class="ch">Danh sách</a>
+							</div></li>
+						<li>+ QUẢNG CÁO TRÁI</li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qctr"
+									class="ch">Thêm mới</a>
+							</div></li>
+						<li class="lch"><div>
+								<a class="ch">Danh sách</a>
+							</div></li>
+						<li>+ QUẢNG CÁO PHẢI</li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qcph"
+									class="ch">Thêm mới</a>
+							</div></li>
+						<li class="lch"><div>
+								<a class="ch">Danh sách</a>
+							</div></li>
+						<li>+ QUẢNG CÁO TRÊN</li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qcTop"
+									class="ch">Thêm mới</a>
+							</div></li>
+						<li class="lch"><div>
+								<a class="ch">Danh sách</a>
+							</div></li>
+						<li><a class="ch">+ QUẢN LÝ CHUNG</a></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/banner"
+									class="ch">BANNER</a>
+							</div></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/#" class="ch">THÔNG
+									TIN LIÊN HỆ</a>
+							</div></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/lh"
+									class="ch">TRANG LIÊN HỆ</a>
+							</div></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/gt"
+									class="ch">TRANG GIỚI THIỆU</a>
+							</div></li>
+						<li class="lch"><div>
+								<a
+									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/bando"
+									class="ch">CẬP NHẬT BẢN ĐỒ</a>
+							</div></li>
+					</ul>
 				</div>
+			</div>
 
-				<div class="col-right">
+			<div class="col-right">
 					<?php if(isset($this->breadcrumbs)):?>
 				<?php
 						
@@ -81,7 +150,7 @@ $this->widget ( 'zii.widgets.CBreadcrumbs', array (
 			<?php endif?>	
 			<?php echo $content; ?>
 				</div>
-			</div>
+		</div>
 	</div>
 </body>
 </html>

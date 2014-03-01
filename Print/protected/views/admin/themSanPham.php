@@ -18,6 +18,13 @@ $form = $this->beginWidget ( 'CActiveForm', array (
 		<?php }?>
 	</select>
 </div>
+<div class="row">
+	<label for="Sanpham_parent">Hiển thị là sản phẩm mới</label>
+	<select	name="Sanpham[child]" id="Sanpham_parent">
+	<option value="1">--Là sản phẩm mới--</option>
+	<option value="0">--Không là sản phẩm mới--</option>
+	</select>
+</div>
 <div class="row loaisp"></div>
 <div class="row">
 		<?php echo $form->labelEx($model,'name'); ?>

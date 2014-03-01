@@ -13,6 +13,7 @@ class Sanpham extends AnlabActiveRecord {
 	public $noidung;
 	public $type;
 	public $gia;
+	public $url;
 	public static function model($className=__CLASS__) {
 		return parent::model($className);
 	}
