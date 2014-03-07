@@ -8,7 +8,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <head>
 <meta name="language" content="en" />
 
-<title>Yen Linh Print</title>
+<title>H-CARD mr Hien-0975.268.459</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <meta content="CÔNG TY CỔ PHẦN IN THANH XUYẾN" name="GENERATOR" />
@@ -82,34 +82,6 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dssp"
 									class="ch">Danh sách</a>
 							</div></li>
-						<li>+ QUẢNG CÁO TRÁI</li>
-						<li class="lch"><div>
-								<a
-									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qctr"
-									class="ch">Thêm mới</a>
-							</div></li>
-						<li class="lch"><div>
-								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dsqctr" class="ch">Danh sách</a>
-							</div></li>
-						<li>+ QUẢNG CÁO PHẢI</li>
-						<li class="lch"><div>
-								<a
-									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qcph"
-									class="ch">Thêm mới</a>
-							</div></li>
-						<li class="lch"><div>
-								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dsqcf" class="ch">Danh sách</a>
-							</div></li>
-						<li>+ QUẢNG CÁO TRÊN</li>
-						<li class="lch"><div>
-								<a
-									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/qcTop"
-									class="ch">Thêm mới</a>
-							</div></li>
-						<li class="lch"><div>
-								<a href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/dsqct" class="ch">Danh sách</a>
-							</div></li>
-							
 							<li>+ QUẢN LÝ DỮ LIỆU ẢNH</li>
 						<li class="lch"><div>
 								<a
@@ -130,16 +102,6 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 								<a
 									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/#" class="ch">THÔNG
 									TIN LIÊN HỆ</a>
-							</div></li>
-						<li class="lch"><div>
-								<a
-									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/lh"
-									class="ch">TRANG LIÊN HỆ</a>
-							</div></li>
-						<li class="lch"><div>
-								<a
-									href="<?php echo Yii::app()->request->baseUrl; ?>/admin123465789/gt"
-									class="ch">TRANG GIỚI THIỆU</a>
 							</div></li>
 						<li class="lch"><div>
 								<a

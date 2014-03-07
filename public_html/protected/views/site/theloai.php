@@ -12,7 +12,7 @@
 			<div class="stdo_nd_sp" style="font-size: 10pt;"><div>	&nbsp;</div>
 			<table border="0" cellpadding="1" cellspacing="1" height="802" width="711">	<tbody>
 			<?php
-			$chs = Sanpham::model()->findAll(array("condition" => "parent = '$pas->id'"));
+			$chs = Sanpham::model()->findAll(array("condition" => "parent = '$pas->id'", 'order'=>'thutu ASC'));
 			$i = 0;
 			foreach($chs as $ch){
 				$i++;

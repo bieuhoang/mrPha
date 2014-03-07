@@ -1,4 +1,6 @@
-<?php /* @var $this Controller */ ?>
+<?php
+/* @var $this Controller */
+?>
 <script type="text/javascript">
 var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 </script>
@@ -8,7 +10,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <head>
 <meta name="language" content="en" />
 
-<title>Yen Linh Print</title>
+<title>H-CARD mr Hien-0975.268.459</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <meta content="CỬA HÀNG DỊCH VỤ YẾN LINH" name="GENERATOR" />
@@ -48,9 +50,10 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 </head>
 <body style="background-image: url('<?php  echo Yii::app()->request->baseUrl.'/images/data/bg-master.png'?>')">
 <?php
-$banner = Sanpham::model ()->find ( array (
-		"condition" => "type = '4'" 
-) );
+
+$banner = Sanpham :: model()->find(array (
+	"condition" => "type = '4'"
+));
 $bn = "";
 if ($banner != null) {
 	$bn = $banner->image;
@@ -70,20 +73,26 @@ if ($banner != null) {
 							- dịch vụ</a>
 						<ul class="dataTopMenu">
 						<?php
-						$pas = Sanpham::model ()->findAll ( array (
-								"condition" => "type = '1'" 
-						) );
-						foreach ( $pas as $pa ) {
-							$chs = Sanpham::model ()->findAll ( array (
-									"condition" => "parent = '$pa->id'" 
-							) );
-							?>
+
+$pas = Sanpham :: model()->findAll(array (
+	"condition" => "type = '1'",
+	'order' => 'thutu ASC',
+	
+));
+foreach ($pas as $pa) {
+	$chs = Sanpham :: model()->findAll(array (
+		"condition" => "parent = '$pa->id'",
+		'order' => 'thutu ASC',
+		
+	));
+?>
 						<li><a
 								href="<?php echo Yii::app()->request->baseUrl."/site/theloai?i=".$pa->id."&_".$pa->name;?>"><?php echo $pa->name;?></a>
 								<ul>
 								<?php
-							foreach ( $chs as $ch ) {
-								?>
+
+	foreach ($chs as $ch) {
+?>
 									<li><a
 										href="<?php echo Yii::app()->request->baseUrl."/site/sp?i=".$ch->id."&_".$ch->name;?>"><?php echo $ch->name;?></a></li>
 								<?php }?></ul>
@@ -109,20 +118,23 @@ if ($banner != null) {
 			<div class="slider-wrapper theme-default">
 				<div id="slider" class="nivoSlider">
 				<?php
-				$bqcTops = Sanpham::model ()->findAll ( array (
-						"condition" => "type = '7'" 
-				) );
-				if ($bqcTops != null) {
-					foreach ( $bqcTops as $bqcTop ) {
-						
-						?>
+
+		$bqcTops = Sanpham :: model()->findAll(array (
+			"condition" => "top = '1'",
+			'order' => 'thutu ASC',
+			
+		));
+		if ($bqcTops != null) {
+			foreach ($bqcTops as $bqcTop) {
+?>
 					<img class="active" alt="6"
 						src="<?php echo Yii::app()->request->baseUrl."/files/images/".$bqcTop->image; ?>"
 						style="max-width: 948px; max-height: 240px" />
 				<?php
-					}
-				}
-				?>
+
+			}
+		}
+?>
 				</div>
 			</div>
 		</div>
@@ -151,12 +163,15 @@ if ($banner != null) {
 							scrollamount="4" style="margin: 20px 0 20px 0;">
 							<ul class="photoHot">
 									<?php
-									$spms = Sanpham::model ()->findAll ( array (
-											"condition" => "type = '3' AND child = '1'" 
-									) );
-									if ($spms != null) {
-										foreach ( $spms as $spm ) {
-											?>
+
+		$spms = Sanpham :: model()->findAll(array (
+			"condition" => "moi = '1'",
+			'order' => 'thutu ASC',
+			
+		));
+		if ($spms != null) {
+			foreach ($spms as $spm) {
+?>
 									<li><a
 									href="<?php echo Yii::app()->request->baseUrl.'/site/sp?i='.$spm->id.'&_'.$spm->name;?>"><img
 										src="<?php echo Yii::app()->request->baseUrl."/files/images/".$spm->image; ?>"></a>
@@ -174,13 +189,11 @@ if ($banner != null) {
 						<h2>Hỗ trợ trực tuyến</h2>
 						<div class="fix">
 							<ul class="support">
-								<li class="ts">Địa chỉ: Nguyễn Tuân - Thanh Xuân - Hà Nội</li>
-								<li class="bl">Kỹ thuật đặt hàng</li>
-								<li class="phone">0915xxxyyy</li>
-								<li class="bl">Hotline</li>
-								<li class="phone">0915xxx.yyy</li>
-								<li class="ol"></li>
-
+							<li class="ts">TRUNG TÂM DỊCH VỤ H-CARD</li>
+							<li class="ol">Đc: Ngô Thị Nhậm, Hà Đông- Hà Nội</li>
+							<li class="phone">Kinh doanh: Mr. Hiển</li>
+							<li class="phone">Hotline: 0975.268.459</li>
+							<li class="phone">Email: ............</li>
 							</ul>
 						</div>
 					</div>
@@ -193,23 +206,27 @@ if ($banner != null) {
 				</div>
 			</div>
 		</div>
-<?php
-
-$bando = Sanpham::model ()->find ( array (
-		"condition" => "type = '10'" 
-) );
-if ($bando != null) {
-	$bandoi = $bando->image;
-} else {
-	$bandoi = "";
-}
-?>
 		<div class="box-bottom">
-			<!-- 	<div  class="fl-sodo">
+		<?php
+
+
+				$bando = Sanpham :: model()->find(array (
+					"condition" => "type = '10'",
+					'order' => 'thutu ASC',
+					
+				));
+				if ($bando != null) {
+					$bandoi = $bando->image;
+?>
+	<div  class="fl-sodo">
 				<img width="250" alt="Bản đồ" height="247"
 					src="<?php echo Yii::app()->request->baseUrl."/files/images/".$bandoi ?>" />
 			</div>
-		 -->
+	<?php
+
+				} else {
+				}
+?>
 			<ul class="box-news-bot">
 
 			</ul>
@@ -225,10 +242,9 @@ if ($bando != null) {
 			<div class="footer">
 				<div style="text-align: center;">
 					<div style="text-align: center;">
-						<span style="font-size: 20px;"><strong>CỬA HÀNG DỊCH VỤ YẾN LINH</strong></span><br />
-						<span style="font-size: 14px;"><strong>Trụ sở: Nguyễn tuân - Thanh
-								Xuân - Hà Nội</strong><br /> Tel: 09xxx yyy</span><br /> <strong>Email:</strong>
-						inYenLinh@gmail.com - info@inYenLinh.com<br /> <span
+						<span style="font-size: 20px;"><strong>TRUNG TÂM DỊCH VỤ THẺ - SIM THẺ</strong></span><br />
+						<span style="font-size: 14px;"><strong>Trụ sở: 53- Ngô Thị Nhậm - Quận Hà ĐOng - TP Hà Nội</strong><br /> H-CARD mr Hien-0975.268.459</span><br /> <strong>Email:</strong>
+						xxxxxxxxxx<br /> <span
 							style="font-size: 14px;">
 					
 					</div>
@@ -239,48 +255,56 @@ if ($bando != null) {
 	<div id="divAdLeft" class="dpl"
 		style="display: none; position: absolute; top: 10px; left: 0px;">
 		<?php
-		
-$mnts = Sanpham::model ()->findAll ( array (
-				"condition" => "type = '5'" 
-		) );
-		if ($mnts != null) {
-			foreach ( $mnts as $mnt ) {
-				$url = $mnt->url;
-				if ($mnt->url == null) {
-					$url = Yii::app ()->request->baseUrl . '/site/sp?i=' . $mnt->id . '&_' . $mnt->name;
-				}
-				?>
+
+
+				$mnts = Sanpham :: model()->findAll(array (
+					"condition" => "trai = '1'",
+					'order' => 'thutu ASC',
+					
+				));
+				if ($mnts != null) {
+					foreach ($mnts as $mnt) {
+						$url = $mnt->url;
+						if ($mnt->url == null) {
+							$url = Yii :: app()->request->baseUrl . '/site/sp?i=' . $mnt->id . '&_' . $mnt->name;
+						}
+?>
 				<a href='<?php echo $url ; ?>' target='_blank' title=''><img
 			border='0'
 			src='<?php echo Yii::app()->request->baseUrl."/files/images/".$mnt->image; ?>'
 			width='150' style='margin-bottom: 4px'></a>
 			<?php
-			}
-		}
-		?>
+
+					}
+				}
+?>
 	</div>
 	<div id="divAdRight" class="dpl"
 		style="display: none; position: absolute; top: 10px; left: 0px;">
 		<?php
-		
-$mnfs = Sanpham::model ()->findAll ( array (
-				"condition" => "type = '6'" 
-		) );
-		if ($mnfs != null) {
-			foreach ( $mnfs as $mnf ) {
-				$url = $mnf->url;
-				if ($mnf->url == null) {
-					$url = Yii::app ()->request->baseUrl . '/site/sp?i=' . $mnf->id . '&_' . $mnf->name;
-				}
-				?>
+
+
+				$mnfs = Sanpham :: model()->findAll(array (
+					"condition" => "phai = '1'",
+					'order' => 'thutu ASC',
+					
+				));
+				if ($mnfs != null) {
+					foreach ($mnfs as $mnf) {
+						$url = $mnf->url;
+						if ($mnf->url == null) {
+							$url = Yii :: app()->request->baseUrl . '/site/sp?i=' . $mnf->id . '&_' . $mnf->name;
+						}
+?>
 				<a href='<?php echo $url;?>' target='_blank' title=''><img
 			border='0'
 			src='<?php echo Yii::app()->request->baseUrl."/files/images/".$mnf->image; ?>'
 			width='150' style='margin-bottom: 4px'></a>
 			<?php
-			}
-		}
-		?>
+
+					}
+				}
+?>
 	</div>
 	<script language="javascript" type="text/javascript">document.write("<script type='text/javascript' language='javascript'>MainContentW = 958;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 0;RightAdjust = 0;TopAdjust = 0;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");</script>
 </body>

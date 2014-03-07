@@ -9,7 +9,7 @@ function get_full_url() {
 					$_SERVER['SERVER_PORT'] === 80 ? '' : ':'.$_SERVER['SERVER_PORT']))).
 					substr($_SERVER['SCRIPT_NAME'],0, strrpos($_SERVER['SCRIPT_NAME'], '/'));
 }
-$sps = Sanpham::model ()->findAll ( array (	"condition" => "type = '8'") );
+$sps = Sanpham::model ()->findAll ( array (	"condition" => "image <> ''", 'order'=>'thutu ASC') );
 if($sps != null){
 	?>
 	<table style="border: 1px solid black; width: 100%;">

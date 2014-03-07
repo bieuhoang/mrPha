@@ -1,5 +1,5 @@
 <?php
-$sps = Sanpham::model ()->findAll ( array (	"condition" => "type = '3' and parent > 0") );
+$sps = Sanpham::model ()->findAll ( array (	"condition" => "type = '3'") );
 if($sps != null){	
 	?>
 	<table style="border: 1px solid black; width: 100%;">
@@ -14,10 +14,19 @@ if($sps != null){
 	
 	foreach($sps as $thisSp){
 		$thisTL = Sanpham::model ()->findByPk ($thisSp->parent);
+		$tenTl = "";
+		if($thisTL != null){
+			$tenTl = $tenTl.$thisTL->name."</br>";
+		}
+		$listChecks=["gioithieu", "lienhe", "top", "trai", "phai", "moi"];
+		foreach ($listChecks as $listCheck){
+		if($thisSp->$listCheck == 1){
+			$tenTl = $tenTl.$listCheck."</br>";
+		}}
 		?>
 		<tr style="height: 100px;">	
 			<td style="border: 1px solid #888 ;min-width: 120; text-align: center;" ><?php echo $thisSp->name;?></td>
-			<td style="border: 1px solid #888 ;min-width: 120; text-align: center;" ><?php echo $thisTL->name;?></td>
+			<td style="border: 1px solid #888 ;min-width: 120; text-align: center;" ><?php echo $tenTl;?></td>
 			<td style="border: 1px solid #888 ;min-width: 120; text-align: center;" ><img class="active" alt="6"
 						src="<?php echo Yii::app()->request->baseUrl."/files/images/".$thisSp->image; ?>" style="max-width:100px; max-height:100px"/></td>
 			<td style="border: 1px solid #888 ;min-width: 120; text-align: center;" ><a href="<?php echo Yii::app()->request->baseUrl."/admin123465789/ssp?id=".$thisSp->id;?>">Sửa</a></td>
