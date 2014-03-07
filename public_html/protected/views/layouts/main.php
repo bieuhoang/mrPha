@@ -10,7 +10,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <head>
 <meta name="language" content="en" />
 
-<title>H-CARD mr Hien-0975.268.459</title>
+<title>In Yến Linh - 0975 827 287</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <meta content="CỬA HÀNG DỊCH VỤ YẾN LINH" name="GENERATOR" />
@@ -189,11 +189,11 @@ foreach ($pas as $pa) {
 						<h2>Hỗ trợ trực tuyến</h2>
 						<div class="fix">
 							<ul class="support">
-							<li class="ts">TRUNG TÂM DỊCH VỤ H-CARD</li>
-							<li class="ol">Đc: Ngô Thị Nhậm, Hà Đông- Hà Nội</li>
-							<li class="phone">Kinh doanh: Mr. Hiển</li>
-							<li class="phone">Hotline: 0975.268.459</li>
-							<li class="phone">Email: ............</li>
+							<li class="ts">CỬA HÀNG DỊCH VỤ IN-PHOTOCOPY YẾN LINH</li>
+							<li class="ol">Đc: Nguyễn Tuân, Thanh Xuân</li>
+							<li class="phone">Kinh doanh: Mr. Phả</li>
+							<li class="phone">Hotline: 0975.827.287</li>
+							<li class="phone">Email: cuahangyenlinh@gmail.com</li>
 							</ul>
 						</div>
 					</div>
@@ -242,9 +242,9 @@ foreach ($pas as $pa) {
 			<div class="footer">
 				<div style="text-align: center;">
 					<div style="text-align: center;">
-						<span style="font-size: 20px;"><strong>TRUNG TÂM DỊCH VỤ THẺ - SIM THẺ</strong></span><br />
-						<span style="font-size: 14px;"><strong>Trụ sở: 53- Ngô Thị Nhậm - Quận Hà ĐOng - TP Hà Nội</strong><br /> H-CARD mr Hien-0975.268.459</span><br /> <strong>Email:</strong>
-						xxxxxxxxxx<br /> <span
+						<span style="font-size: 20px;"><strong>TRUNG TÂM DỊCH VỤ IN - PHOTOCOPY YẾN LINH</strong></span><br />
+						<span style="font-size: 14px;"><strong>Trụ sở: Nguyễn Tuân, Quận Thanh Xuân - TP Hà Nội</strong><br /> mr Phả -0975 827 287</span><br /> <strong>Email:</strong>
+						cuahangyenlinh@gmail.com<br /> <span
 							style="font-size: 14px;">
 					
 					</div>

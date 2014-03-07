@@ -8,7 +8,7 @@ var baseUrl = "<?php echo Yii::app()->request->baseUrl; ?>";
 <head>
 <meta name="language" content="en" />
 
-<title>H-CARD mr Hien-0975.268.459</title>
+<title>In Yen Linh</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="/favicon.ico" />
 <meta content="CÔNG TY CỔ PHẦN IN THANH XUYẾN" name="GENERATOR" />
