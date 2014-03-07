@@ -1,5 +1,5 @@
 <?php
-$sps = Sanpham::model ()->findAll ( array (	"condition" => "type = '3'") );
+$sps = Sanpham::model ()->findAll ( array (	"condition" => "type > 1") );
 if($sps != null){	
 	?>
 	<table style="border: 1px solid black; width: 100%;">
