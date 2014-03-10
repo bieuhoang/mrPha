@@ -35,7 +35,7 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 			'db'=>array(
-					'connectionString' => 'mysql:host=localhost;dbname=mrHien',
+					'connectionString' => 'mysql:host=localhost;dbname=u429035675_mrhie',
 					'emulatePrepare' => true,
 					'username' => 'root',
 					'password' => 'public123',
